@@ -1,0 +1,93 @@
+<extend name="Demo:demo" />
+
+<block name="style">
+<link rel="stylesheet" href="<?php echo ADMIN_CSS_URL ?>addproject.css" />
+</block>
+
+<block name="navleft">
+<ul class="nav nav-tabs">
+    <foreach name="auth_infoA" item="v">
+    <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+            {$v.auth_name} <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+            <foreach name="auth_infoB" item="vv">
+            <if condition="$vv['auth_pid']==$v['auth_id']">
+            <li><a href="__MODULE__/{$vv.auth_c}/{$vv.auth_a}">{$vv.auth_name}</a></li>
+            </if>
+            </foreach>
+        </ul>
+    </li>
+    </foreach>
+</ul>
+</block>
+
+<block name="main">
+    <h1>修改文章</h1>
+    <form name='MyForm' id='MyForm' method='POST' action="__ACTION__/ne_id/{$news.ne_id}" >
+    <div id="row">
+        <div id="rowname">文章标题：</div>
+        <input type="text" name="title" id="title" value="{$news.ne_title}">
+    </div>
+    <div id="row">
+        <div id="rowname">&nbsp;作&nbsp;&nbsp;&nbsp;&nbsp;者：</div>
+        <input type="text" name="author" id="author" value="{$news.ne_author}">
+    </div>
+    <div id="row">
+        <div id="rowname">&nbsp;关&nbsp;键&nbsp;词：</div>
+        <input type="text" name="keyword" id="keyword" value="{$news.ne_key}">
+    </div>
+    <div id="row-other">
+        <div id="rowname">文章摘要：(一般为文章前120-150字)</div>
+        <textarea name="abstract" rows="5" cols="60" style="margin-left:20px;">
+            {$news.ne_abstract}
+        </textarea>
+    </div>
+    <div id="row">
+        <div id="rowname">所属类目：</div>
+        <select name="classes">
+            <foreach name="class" item="v" >
+
+                <if condition="$news.ne_class == $v['class_id']">
+                    <option selected="selected" value="{$v.class_id}">{$v.class_name}</option>
+                <else/>
+                    <option value="{$v.class_id}">{$v.class_name}</option>
+                </if>
+                
+            </foreach>
+        </select>
+    </div>
+    <div id="row-other">
+        <div id=rowname>具体内容：</div>
+        <input name="content" type="hidden" id="content">
+        <script id="editor" name="editor" type="text/plain" style="width:900px;height:300px">
+            {$news.ne_content}
+        </script>
+    </div>
+    <div id="sub">
+        <button onclick="submitEditor()"/>提交</button>
+    </div>
+    </form>
+</block>
+
+<block name="script">
+<script type="text/javascript">
+    //UEDITOR_HOME_URL、config、all这三个顺序不能改变(绝对路径)
+    //window.UEDITOR_HOME_URL = "/ThinkPHP/Public/Ueditor/";    
+    
+    //实例化编辑器
+    var ue = UE.getEditor('editor');
+    
+    //提交方法
+    function submitEditor()    {
+        //此处以非空为例
+        if(ue.hasContents()){
+            ue.sync();       //同步内容(内容里的图片)
+            document.MyForm.content.value=ue.getContent();
+            document.MyForm.submit();
+        }
+    }  
+    
+</script>
+</block>

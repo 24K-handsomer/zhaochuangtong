@@ -1,0 +1,58 @@
+<extend name="Demo:demo" />
+
+<block name="style">
+<link rel="stylesheet" href="<?php echo ADMIN_CSS_URL ?>showproject.css" />
+</block>
+
+<block name="navleft">
+<ul class="nav nav-tabs">
+    <foreach name="auth_infoA" item="v">
+    <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+            {$v.auth_name} <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+            <foreach name="auth_infoB" item="vv">
+            <if condition="$vv['auth_pid']==$v['auth_id']">
+            <li><a href="__MODULE__/{$vv.auth_c}/{$vv.auth_a}">{$vv.auth_name}</a></li>
+            </if>
+            </foreach>
+        </ul>
+    </li>
+    </foreach>
+</ul>
+</block>
+
+<block name="main">
+<h1>项目留言列表</h1>
+<div>共有留言：{$count}条</div>
+
+<table width="94%" border="1" cellpadding="0" cellspacing="0">
+	<tr id="first-tr">
+		<td>编号</td>
+	    <td>项目名</td>
+	    <td>留言者姓名</td>
+	    <td>手机号</td>
+	    <td>其他联系方式</td>
+	    <td>留言内容</td>
+	    <td>所在地</td>
+	    <td>留言时间</td>
+	</tr>
+	<foreach name="liuyan" item="v">
+	<tr id="second-tr">
+		<td>{$v.liu_id}</td>
+		<td>{$v.liu_protitle}</td>
+	    <td>{$v.liu_name}</td>
+	    <td>{$v.liu_tel}</td>
+	    <td>{$v.liu_other}</td>
+	    <td>{$v.liu_content}</td>
+	    <td>{$v.liu_city}</td>
+	    <td>{$v.liu_crtime}</td>
+	</tr>
+	</foreach>
+</table>
+<div>{$show}</div>
+</block>
+
+<block name="script">
+</block>

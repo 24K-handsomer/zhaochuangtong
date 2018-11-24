@@ -1,0 +1,53 @@
+
+h1{
+	text-align: center;
+}
+#row{
+	padding: 16px 0px;
+	display: flex;
+    justify-content: flex-start;
+    align-items:flex-start;
+    padding-left: 10px;
+}
+#rowname{
+
+}
+#row #rowname{
+}
+
+#row-other{
+	padding: 16px 0px;
+}
+#row-other #rowname{
+	padding:10px;
+}
+#row-other .edui-default{
+	margin: 0 auto;
+}
+
+#row-three{
+	padding: 16px;
+}
+#row-three #rowname{
+}
+#row-three input{
+
+}
+
+#public{
+	padding-bottom: 16px;
+}
+#sub{
+	text-align: center;
+}
+#sub button{
+	font-size: 24px;
+}
+
+#class_label>div:nth-child(1){
+	padding-left:5px;
+	font-weight: 800;
+}
+#class_label>div:nth-child(2){
+    padding-left:20px; 
+}

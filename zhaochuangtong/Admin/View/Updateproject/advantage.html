@@ -1,0 +1,74 @@
+<extend name="Demo:demo" />
+
+<block name="style">
+<link rel="stylesheet" href="<?php echo ADMIN_CSS_URL ?>addproject.css" />
+</block>
+
+<block name="navleft">
+<ul class="nav nav-tabs">
+    <foreach name="auth_infoA" item="v">
+    <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+            {$v.auth_name} <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+            <foreach name="auth_infoB" item="vv">
+            <if condition="$vv['auth_pid']==$v['auth_id']">
+            <li><a href="__MODULE__/{$vv.auth_c}/{$vv.auth_a}">{$vv.auth_name}</a></li>
+            </if>
+            </foreach>
+        </ul>
+    </li>
+    </foreach>
+</ul>
+<br/>
+<br/>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;项目修改</div>
+<ul class="nav nav-tabs">
+    <foreach name="auth_infoC" item="vv">
+    <li><a href="__MODULE__/{$vv.auth_c}/{$vv.auth_a}/pro_id/{$project_02.pro_id}">{$vv.auth_name}修改</a></li>
+    </foreach>
+</ul>
+
+</block>
+
+<block name="main">
+    <h1>项目优势修改</h1>
+    <form name='MyForm' id='MyForm' method='POST' action="__ACTION__/pro_id/{$project_02.pro_id}" enctype="multipart/form-data" >
+    <div id="row-other">
+        <div id="rowname">项目优势：</div>
+        <input type="hidden" name="advantage" />
+        <script id="advan" name="advan" type="text/plain" style="width:900px;height:500px">
+            {$project_02.pro_advantage}
+        </script>
+    </div>
+    <div id="sub">
+        <button onclick="submitEditor()"/>提交</button>
+    </div>
+
+    </form>
+
+</block>
+
+<block name="script">
+<script type="text/javascript">
+    //UEDITOR_HOME_URL、config、all这三个顺序不能改变(绝对路径)
+    //window.UEDITOR_HOME_URL = "/ThinkPHP/Public/Ueditor/";    
+    
+    //实例化编辑器
+    var advantage = UE.getEditor('advan');
+
+    //提交方法
+    function submitEditor()    {
+        //此处以非空为例
+        //if(ue.hasContents()){
+            //ue.sync();       //同步内容(内容里的图片)
+            advantage.sync();
+            document.MyForm.advantage.value=advantage.getContent();
+            document.MyForm.submit();
+        //}
+    }  
+    
+</script>
+
+</block>

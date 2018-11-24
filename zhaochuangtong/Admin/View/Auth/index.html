@@ -1,0 +1,122 @@
+<extend name="Demo:demo" />
+
+<block name="style">
+<link rel="stylesheet" href="<?php echo ADMIN_CSS_URL ?>addproject.css" />
+<link rel="stylesheet" href="<?php echo ADMIN_CSS_URL ?>auth.css" />
+</block>
+
+<block name="navleft">
+<ul class="nav nav-tabs">
+    <foreach name="auth_infoA" item="v">
+    <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+            {$v.auth_name} <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+            <foreach name="auth_infoB" item="vv">
+            <if condition="$vv['auth_pid']==$v['auth_id']">
+            <li><a href="__MODULE__/{$vv.auth_c}/{$vv.auth_a}">{$vv.auth_name}</a></li>
+            </if>
+            </foreach>
+        </ul>
+    </li>
+    </foreach>
+</ul>
+</block>
+
+<block name="main">
+    <h1>权限管理</h1>
+
+    <div id="add">
+        <form action="__CONTROLLER__/add" method="post">
+        <div>
+            <div>新增会员账号：</div>
+            <input type="text" name="u_name">
+        </div>
+        <div>
+            <span>角&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;色：</span>
+            <foreach name="role" item="v">
+                <input type="radio" name="role_id" value="{$v.role_id}" />{$v.role_name}&nbsp;&nbsp;&nbsp;
+            </foreach>
+        </div>
+        <div><input class="submit" type="submit" value="提交" /></div>
+        </form>
+    </div>
+
+    <div id="update">
+        <form action="__CONTROLLER__/update" method="post">
+        <div>
+            <span>修改会员角色：</span>
+            <select name="user" id="user">
+                <foreach name="user" item="v">
+                    <option value="{$v.u_id}">{$v.u_name}</option>
+                </foreach>
+            </select>
+        </div>
+        <div>
+            <span>角&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;色：</span>
+            <foreach name="role" item="v">
+                <input type="radio" name="role" class="js" value="{$v.role_id}" />{$v.role_name}&nbsp;&nbsp;&nbsp;
+            </foreach>
+        </div>
+        <div><input class="submit" type="submit" id="btn" value="修改" /></div>
+        </form>
+    </div> 
+
+    <div id="delete">
+        <form action="__CONTROLLER__/delete" method="post">
+        <div>
+            <span>删除会员：</span>
+            <select name="user">
+                <foreach name="user" item="v">
+                    <option value="{$v.u_id}">{$v.u_name}</option>
+                </foreach>
+            </select>
+        </div>
+        <div><input class="submit" type="submit" value="删除" /></div>
+        </form>
+    </div>
+
+</block>
+
+<block name="script">
+<script type="text/javascript">
+showrole();
+
+$(document).ready(function() {
+    /*显示用户的角色*/
+    $("#user").change(function(){
+        showrole();
+    });
+})
+
+function showrole(){
+    var uid=$("#user").val();
+        $.ajax({
+            url:"__CONTROLLER__/showrole",
+            data:{uid:uid},
+            type:"POST",
+            dataType:"JSON",
+            success:function(data){
+            
+                var role_id=data['info']['u_role_id'];
+                var ck=$(".js");
+                ck.prop("checked",false);
+                
+                for(var i=0;i<ck.length;i++)
+                {
+                    var v=ck.eq(i).val();
+                    //var z=$.inArray(v,shuju);//$.inArray()判断v是否在数组shuju中，没有返回-1，有就返回索引号
+                    if(v==role_id)
+                    {
+                        ck.eq(i).prop("checked",true);    
+                    }
+                }
+                
+            }
+            
+        });
+}
+
+</script>
+</block>

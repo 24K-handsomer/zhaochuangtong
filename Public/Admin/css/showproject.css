@@ -1,0 +1,39 @@
+
+#public{
+	padding-bottom: 16px;
+    padding-top: 16px;
+	text-align: center;
+}
+#public>table{
+	margin: 0 auto;
+}
+
+
+#second-tr{
+	height: 100px;
+}
+
+#id{
+	width: 40px;
+}
+#usname{
+	width: 60px;
+}
+#miximg{
+	width: 120px;
+	padding: 10px;
+}
+#miximg img{
+	margin:0px auto;
+}
+#shortdes{
+	width: 280px;
+    font-size: 12px;
+}
+#crtime{
+	width: 95px;
+}
+#caozuo{
+	width: 70px;
+}
+

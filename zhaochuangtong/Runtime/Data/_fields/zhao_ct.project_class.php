@@ -1,0 +1,1 @@
+a:4:{i:0;s:6:"cla_id";i:1;s:8:"cla_name";s:3:"_pk";s:6:"cla_id";s:5:"_type";a:2:{s:6:"cla_id";s:7:"int(11)";s:8:"cla_name";s:12:"varchar(255)";}}

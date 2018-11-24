@@ -1,0 +1,117 @@
+<extend name="Demo:demo" />
+
+<block name="style">
+<link rel="stylesheet" href="<?php echo ADMIN_CSS_URL ?>addproject.css" />
+</block>
+
+<block name="navleft">
+<ul class="nav nav-tabs">
+    <foreach name="auth_infoA" item="v">
+    <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+            {$v.auth_name} <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+            <foreach name="auth_infoB" item="vv">
+            <if condition="$vv['auth_pid']==$v['auth_id']">
+            <li><a href="__MODULE__/{$vv.auth_c}/{$vv.auth_a}">{$vv.auth_name}</a></li>
+            </if>
+            </foreach>
+        </ul>
+    </li>
+    </foreach>
+</ul>
+<br/>
+<br/>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;项目修改</div>
+<ul class="nav nav-tabs">
+    <foreach name="auth_infoC" item="vv">
+    <li><a href="__MODULE__/{$vv.auth_c}/{$vv.auth_a}/pro_id/{$project_01.pro_id}">{$vv.auth_name}修改</a></li>
+    </foreach>
+</ul>
+
+</block>
+
+<block name="main">
+    <h1>项目基本信息修改</h1>
+    <form name='MyForm' id='MyForm' method='POST' action="__ACTION__/pro_id/{$project_01.pro_id}" enctype="multipart/form-data" >
+    <div id="row">
+        <div id="rowname">项目名称：</div>
+        <input type="text" name="title" id="title" value="{$project_01.pro_title}" />
+    </div>
+    <div id="row">
+        <div id="rowname">&nbsp;项&nbsp;目&nbsp;人：</div>
+        <input type="text" name="author" id="author" value="{$project_01.pro_usname}" />
+    </div>
+    <div id="row">
+        <div id="rowname">项目logo图：</div>
+        <input type="hidden" name="logo" />
+        <script id="logoimg" name="logoimg" type="text/plain" style="width:500px;height:300px">
+            <img src="{$project_01.pro_logo}" />
+        </script>
+    </div>
+    <div id="row">
+        <div id="rowname">&nbsp;二&nbsp;维&nbsp;码：</div>
+        <input type="hidden" name="twobar" />
+        <script id="twobarma" name="twobarma" type="text/plain" style="width:500px;height:300px">
+            <img src="{$project_01.pro_twobar}" />
+        </script>
+    </div>
+    <div id="row">
+        <div id="rowname">项目公司：</div>
+        <input type="text" name="company" id="company" value="{$project_01.pro_company}" />
+    </div>
+    <div id="row">
+        <div id="rowname">公司地址：</div>
+        <input type="text" name="addr" id="addr" value="{$project_01.pro_com_addr}" />
+    </div>
+    <div id="row">
+        <div id="rowname">公司电话：</div>
+        <input type="text" name="tel" id="tel" value="{$project_01.pro_com_tel}" />
+    </div>
+    <div id="row">
+        <div id="rowname">公司网站：</div>
+        <input type="text" name="website" id="website" value="{$project_01.pro_com_website}" />
+    </div>
+    <div id="row">
+        <div id="rowname">&nbsp;微&nbsp;信&nbsp;号：</div>
+        <input type="text" name="weixin" id="weixin" value="{$project_01.pro_weixin}" />
+    </div>
+    <div id="sub">
+        <button onclick="submitEditor()"/>提交</button>
+    </div>
+
+    </form>
+
+</block>
+
+<block name="script">
+<script type="text/javascript">
+    //UEDITOR_HOME_URL、config、all这三个顺序不能改变(绝对路径)
+    //window.UEDITOR_HOME_URL = "/ThinkPHP/Public/Ueditor/";    
+    
+    //实例化编辑器
+    var logo = UE.getEditor('logoimg',{
+        toolbars: [['source', 'undo', 'redo','simpleupload',]]
+    });
+    
+    var twobar = UE.getEditor('twobarma',{
+        toolbars: [['source', 'undo', 'redo','simpleupload',]]
+    });
+
+    //提交方法
+    function submitEditor()    {
+        //此处以非空为例
+        //if(ue.hasContents()){
+            //ue.sync();       //同步内容(内容里的图片)
+            logo.sync();
+            twobar.sync();
+            document.MyForm.logo.value=logo.getContent();
+            document.MyForm.twobar.value=twobar.getContent();
+            document.MyForm.submit();
+        //}
+    }  
+    
+</script>
+
+</block>

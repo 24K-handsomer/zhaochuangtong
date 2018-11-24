@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<title>微名片</title>
+	<link rel="stylesheet" href="<?php echo CSS_URL ?>card.css" />
+	<link href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<!--banner-->
+	<div class="banner">
+		<img src="<?php echo IMG_URL ?>card/banner.png" />
+	</div>
+	
+	<div class="card">
+		<img src="<?php echo IMG_URL ?>card/card.png" />
+	</div>
+<!--content-->
+	<form action="__CONTROLLER__/addmess" method="post">
+	<div class="content">
+		<div class="content-left">
+			<div class="box1">
+				<img src="<?php echo IMG_URL ?>card/name.png" />
+				<input type="text" name="name" placeholder="请输入您的名字" />
+			</div>
+			<div class="box1">
+				<img src="<?php echo IMG_URL ?>card/contact.png" />
+				<input type="text" name="tel" placeholder="请输入手机号码" />
+			</div>
+			<div class="box1">
+				<img src="<?php echo IMG_URL ?>card/mailbox.png" />
+				<input type="text" name="other" placeholder="其他联系方式(QQ/微信/邮箱)" />
+			</div>
+			<div class="box1">
+				<img src="<?php echo IMG_URL ?>card/city.png" />
+				<input type="text" name="city" placeholder="请输入所在城市" />
+			</div>
+		</div>
+		<div class="content-right">
+			<div><img src="<?php echo IMG_URL ?>card/picture.png" /></div>
+		</div>
+	</div>
+	<div class="sub">
+		<input type="submit" value="提交你的信息" />
+	</div>
+	</form>
+<!--copyright-->
+	<div class="copyright">
+		<span>招创通点亮你的生活</span>
+	</div>
+<!--footer-->
+	<div class="mui-bar-footer">
+		<ul class="mui-table-view">
+		    <li class="mui-table-view-cell">
+		      <a href="#">
+		      	<div><img src="<?php echo IMG_URL ?>index/feilei.png" /></div>
+		      	<div>分类</div>
+		      </a>
+		    </li>
+		    
+		    <li class="mui-table-view-cell">
+		      <a href="#">
+		      	<div><img src='<?php echo IMG_URL ?>index/121403.png' /></div>
+		      	<div>电话</div>
+		      </a>
+		    </li>
+		    
+		    <li class="mui-table-view-cell">
+		      <a href="#">
+		      	<div><img src='<?php echo IMG_URL ?>index/logo.png' /></div>
+		      </a>
+		    </li>
+		    
+		    <li class="mui-table-view-cell">
+		      <a href="#">
+		      	<div><img src='<?php echo IMG_URL ?>index/QQ.png' /></div>
+		      	<div>QQ</div>
+		      </a>
+		    </li>
+		    
+		    <li class="mui-table-view-cell">
+		      <a href="#">
+		      	<div><img src='<?php echo IMG_URL ?>index/join.png' /></div>
+		      	<div>加入我们</div>
+		      </a>
+		    </li>
+	    </ul>
+	</div>
+</body>
+<script src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
+<script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+</html>

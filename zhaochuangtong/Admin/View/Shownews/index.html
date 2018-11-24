@@ -1,0 +1,60 @@
+<extend name="Demo:demo" />
+
+<block name="style">
+<link rel="stylesheet" href="<?php echo ADMIN_CSS_URL ?>showproject.css" />
+</block>
+
+<block name="navleft">
+<ul class="nav nav-tabs">
+    <foreach name="auth_infoA" item="v">
+    <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+            {$v.auth_name} <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+            <foreach name="auth_infoB" item="vv">
+            <if condition="$vv['auth_pid']==$v['auth_id']">
+            <li><a href="__MODULE__/{$vv.auth_c}/{$vv.auth_a}">{$vv.auth_name}</a></li>
+            </if>
+            </foreach>
+        </ul>
+    </li>
+    </foreach>
+</ul>
+</block>
+
+<block name="main">
+<h1>文章列表</h1>
+<div>共有项目：{$count}条</div>
+<table width="94%" border="1" cellpadding="0" cellspacing="0">
+	<tr id="first-tr">
+	     <td>文章号</td>
+	     <td>文章名称</td>
+	     <td>作者</td>
+	     <td>缩略图</td>
+	     <td>文章摘要</td>
+	     <td>发布时间</td>
+	     <td>浏览量</td>
+	     <td>操作</td>
+	</tr>
+	<foreach name="news" item="v">
+	<tr id="second-tr">
+	     <td id="id">{$v.ne_id}</td>
+	     <td id="title">{$v.ne_title}</td>
+	     <td id="usname">{$v.ne_author}</td>
+	     <td id="miximg"><img src="{$v.ne_imgsrc}" /></td>
+	     <td id="shortdes">{$v.ne_abstract}</td>
+	     <td id="crtime">{$v.ne_crtime}</td>
+	     <td id="views">{$v.ne_view}</td>
+	     <td id="caozuo">
+	     	<a href="__MODULE__/Updatenews/index/ne_id/{$v.ne_id}">修改</a>
+	     	<a href="__MODULE__/Deletenews/index/ne_id/{$v.ne_id}">删除</a>
+	     	<a href="http://localhost/tp/index.php/Home/Article/index/ne_id/{$v.ne_id}" target="_blank">查看</a>
+	     </td>
+	</tr>
+	</foreach>
+</table>
+<div>{$show}</div>
+</block>
+
+<block name="script"></block>

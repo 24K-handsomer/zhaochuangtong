@@ -1,0 +1,250 @@
+<extend name="Demo:demo" />
+
+<block name="style">
+<link rel="stylesheet" href="<?php echo ADMIN_CSS_URL ?>addproject.css" />
+</block>
+
+<block name="navleft">
+<ul class="nav nav-tabs">
+    <foreach name="auth_infoA" item="v">
+    <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+            {$v.auth_name} <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+            <foreach name="auth_infoB" item="vv">
+            <if condition="$vv['auth_pid']==$v['auth_id']">
+            <li><a href="__MODULE__/{$vv.auth_c}/{$vv.auth_a}">{$vv.auth_name}</a></li>
+            </if>
+            </foreach>
+        </ul>
+    </li>
+    </foreach>
+</ul>
+<br/>
+<br/>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;项目修改</div>
+<ul class="nav nav-tabs">
+    <foreach name="auth_infoC" item="vv">
+    <li><a href="__MODULE__/{$vv.auth_c}/{$vv.auth_a}/pro_id/{$pro_id}">{$vv.auth_name}修改</a></li>
+    </foreach>
+</ul>
+</block>
+
+<block name="main">
+    <h1>项目修改</h1>
+    <form name='MyForm' id='MyForm' method='POST' action="__ACTION__/pro_id/{$project_01.pro_id}" enctype="multipart/form-data" >
+    <div id="row">
+        <div id="rowname">项目名称：</div>
+        <input type="text" name="title" id="title" value="{$project_01.pro_title}" />
+    </div>
+    <div id="row">
+        <div id="rowname">&nbsp;项&nbsp;目&nbsp;人：</div>
+        <input type="text" name="author" id="author" value="{$project_01.pro_usname}" />
+    </div>
+    <div id="row">
+        <div id="rowname">项目logo图：</div>
+        <input type="hidden" name="logo" />
+        <script id="logoimg" name="logoimg" type="text/plain" style="width:500px;height:300px">
+            <img src="{$project_01.pro_logo}" />
+        </script>
+    </div>
+    <div id="row">
+        <div id="rowname">&nbsp;二&nbsp;维&nbsp;码：</div>
+        <input type="hidden" name="twobar" />
+        <script id="twobarma" name="twobarma" type="text/plain" style="width:500px;height:300px">
+            <img src="{$project_01.pro_twobar}" />
+        </script>
+    </div>
+    <div id="row">
+        <div id="rowname">项目公司：</div>
+        <input type="text" name="company" id="company" value="{$project_01.pro_company}" />
+    </div>
+    <div id="row">
+        <div id="rowname">公司地址：</div>
+        <input type="text" name="addr" id="addr" value="{$project_01.pro_com_addr}" />
+    </div>
+    <div id="row">
+        <div id="rowname">公司电话：</div>
+        <input type="text" name="tel" id="tel" value="{$project_01.pro_com_tel}" />
+    </div>
+    <div id="row">
+        <div id="rowname">公司网站：</div>
+        <input type="text" name="website" id="website" value="{$project_01.pro_com_website}" />
+    </div>
+    <div id="row">
+        <div id="rowname">&nbsp;微&nbsp;信&nbsp;号：</div>
+        <input type="text" name="weixin" id="weixin" value="{$project_01.pro_weixin}" />
+    </div>
+
+    <div id="row-other">
+        <div id="rowname">项目介绍：</div>
+        <input type="hidden" name="instr" />
+        <script id="instruction" name="instruction" type="text/plain" style="width:900px;height:600px">
+            {$project_02.pro_instr}
+        </script>
+    </div>
+    <div id="row-other">
+        <div id="rowname">项目优势：</div>
+        <input type="hidden" name="advantage" />
+        <script id="advan" name="advan" type="text/plain" style="width:900px;height:500px">
+            {$project_02.pro_advantage}
+        </script>
+    </div>
+    <div id="row-other">
+        <div id="rowname">项目展示（图片形式）：</div>
+        <input type="hidden" name="show" />
+        <script id="showimg" name="showimg" type="text/plain" style="width:900px;height:600px">
+            {$project_02.pro_show}
+        </script>
+    </div>
+    <div id="row-other">
+        <div id="rowname">项目扶持服务：</div>
+        <input type="hidden" name="support" />
+        <script id="suppo" name="suppo" type="text/plain" style="width:900px;height:500px">
+            {$project_02.pro_support}
+        </script>
+    </div>
+    <div id="row">
+        <div id="rowname">项目页面导航图片：</div>
+        <input type="hidden" name="navimg" />
+        <script id="nav" name="nav" type="text/plain" style="width:650px;height:500px">
+            <img src="{$project_02.pro_navimg}">
+        </script>
+    </div>
+    
+    <div id="row-three">
+        <div id="rowname">项目所属标签：</div>
+        <foreach name="class" item="vv">
+            <div id="class_label">
+                <div>{$vv.cla_name}</div>
+                <div>
+                <foreach name="label" item="v" >
+                <if condition="$v['lab_claid']==$vv['cla_id']">
+                    <if condition="in_array($v['lab_id'],$label_01)">
+                        <input type='checkbox' checked="checked" name='label[]' id="label" value="{$v.lab_id}"/>{$v.lab_name}
+                    <else />
+                        <input type='checkbox' name='label[]' id="label" value="{$v.lab_id}"/>{$v.lab_name}
+                    </if>
+                </if>
+                </foreach>
+                </div>
+            </div>
+        </foreach>
+
+
+        <!-- <foreach name="label" item="v" >
+        
+            <if condition="in_array($v['lab_id'],$label_01)">
+                <input type='checkbox' checked="checked" name='label[]' id="label" value="{$v.lab_id}"/>{$v.lab_name}
+            <else />
+                <input type='checkbox' name='label[]' id="label" value="{$v.lab_id}"/>{$v.lab_name}
+            </if>
+            
+        </foreach> -->
+        
+    </div>
+    <div id="row">
+        <div id="rowname">项目所在城市：</div>
+        <input type="text" name="city" id="city" value="{$project_01.pro_city}" />
+    </div>
+    <div id="row">
+        <div id="rowname">项目投资额度：</div>
+        <select name="money" id="money">
+        <foreach name="money" item="v" >
+
+            <if condition="$project_01.pro_money == $v['mo_id']">
+                <option selected="selected" value="{$v.mo_id}">{$v.mo_limit}</option>
+            <else/>
+                <option value="{$v.mo_id}">{$v.mo_limit}</option>
+            </if>
+            
+        </foreach>
+            
+        </select>
+    </div>
+    <div id="row">
+        <div id="rowname">项目加盟方式：</div>
+        <select name="joinsty" id="joinsty">
+        <foreach name="joinsty" item="v" >
+
+            <if condition="$project_01.pro_joinsty == $v['jo_id']">
+                <option selected="selected" value="{$v.jo_id}">{$v.jo_name}</option>
+            <else/>
+                <option value="{$v.jo_id}">{$v.jo_name}</option>
+            </if>
+            
+        </foreach>
+        </select>
+    </div>
+    <div id="row-three">
+        <div id="rowname">项目适合人群：</div>
+        <foreach name="suitpeo" item="v" >
+
+            <if condition="in_array($v['su_id'],$suitpeo_01)">
+                <input type='checkbox' checked="checked" name='suitpeo[]' id="suitpeo" value="{$v.su_id}"/>{$v.su_name}
+            <else />
+                <input type='checkbox' name='suitpeo[]' id="suitpeo" value="{$v.su_id}"/>{$v.su_name}
+            </if>
+            
+        </foreach>
+        
+    </div>
+    <div id="sub">
+        <button onclick="submitEditor()"/>提交</button>
+    </div>
+    </form>
+</block>
+
+<block name="script">
+<script type="text/javascript">
+    //UEDITOR_HOME_URL、config、all这三个顺序不能改变(绝对路径)
+    //window.UEDITOR_HOME_URL = "/ThinkPHP/Public/Ueditor/";    
+    
+    //实例化编辑器
+    var logo = UE.getEditor('logoimg',{
+        toolbars: [['source', 'undo', 'redo','simpleupload',]]
+    });
+    
+    var twobar = UE.getEditor('twobarma',{
+        toolbars: [['source', 'undo', 'redo','simpleupload',]]
+    });
+
+    var instr = UE.getEditor('instruction');
+
+    var advantage = UE.getEditor('advan');
+
+    var show = UE.getEditor('showimg',{
+        toolbars: [['source', 'undo', 'redo','simpleupload',]]
+    });
+
+    var support = UE.getEditor('suppo');
+
+    var navimg = UE.getEditor('nav',{
+        toolbars: [['source', 'undo', 'redo','simpleupload',]]
+    });
+    //提交方法
+    function submitEditor()    {
+        //此处以非空为例
+        //if(ue.hasContents()){
+            //ue.sync();       //同步内容(内容里的图片)
+            logo.sync();
+            twobar.sync();
+            instr.sync();
+            advantage.sync();
+            show.sync();
+            support.sync();
+            navimg.sync();
+            document.MyForm.logo.value=logo.getContent();
+            document.MyForm.twobar.value=twobar.getContent();
+            document.MyForm.instr.value=instr.getContent();
+            document.MyForm.advantage.value=advantage.getContent();
+            document.MyForm.show.value=show.getContent();
+            document.MyForm.support.value=support.getContent();
+            document.MyForm.navimg.value=navimg.getContent();
+            document.MyForm.submit();
+        //}
+    }  
+    
+</script>
+</block>

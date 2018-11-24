@@ -1,0 +1,74 @@
+body,h1,h2,h3,p,ul,ol,form,fieldset,figure,div,img{
+	margin: 0;
+	padding: 0;
+}
+body{
+	background-color: #fff;
+	font-family:"微软雅黑";
+}
+ul,ol{
+	list-style-type: none;
+}
+a{
+	text-decoration: none;
+}
+a:link,a:visited,a:hover,a:active{ 
+	text-decoration: none; 
+}
+img {
+	display: block;
+	max-width: 100%;
+}
+
+
+#zhuti{
+	font-family: "微软雅黑";
+    padding: 25px 5%;
+}
+#title{
+	text-align: justify;
+    font-size: 30px;
+    font-weight: 700;
+    padding-bottom: 12px;
+}
+#au-ti{
+	display: flex;
+    justify-content: flex-start;
+    font-size: 14px;
+}
+#time{
+	padding-left: 18px;
+}
+
+#content{
+	font-size: 16px;
+	line-height: 27px;
+	padding-top: 20px;
+	text-indent: 2em;
+    text-align: justify;
+}
+#content p{
+	text-indent: 2em;
+    text-align: justify;
+    padding: 6px;
+}
+#content img{
+	margin: 0 auto;
+}
+
+#vi-sha{
+	padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+}
+#share a{
+	color:#231815;
+}
+
+.modal-content,.modal-body{
+	background-color: transparent;
+    padding: 40px 5% 40px 5%;
+    font-size: 30px;
+    color: blanchedalmond;
+    text-align: center;
+}

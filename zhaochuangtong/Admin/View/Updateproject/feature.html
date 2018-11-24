@@ -1,0 +1,125 @@
+<extend name="Demo:demo" />
+
+<block name="style">
+<link rel="stylesheet" href="<?php echo ADMIN_CSS_URL ?>addproject.css" />
+</block>
+
+<block name="navleft">
+<ul class="nav nav-tabs">
+    <foreach name="auth_infoA" item="v">
+    <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+            {$v.auth_name} <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+            <foreach name="auth_infoB" item="vv">
+            <if condition="$vv['auth_pid']==$v['auth_id']">
+            <li><a href="__MODULE__/{$vv.auth_c}/{$vv.auth_a}">{$vv.auth_name}</a></li>
+            </if>
+            </foreach>
+        </ul>
+    </li>
+    </foreach>
+</ul>
+<br/>
+<br/>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;项目修改</div>
+<ul class="nav nav-tabs">
+    <foreach name="auth_infoC" item="vv">
+    <li><a href="__MODULE__/{$vv.auth_c}/{$vv.auth_a}/pro_id/{$project_01.pro_id}">{$vv.auth_name}修改</a></li>
+    </foreach>
+</ul>
+
+</block>
+
+<block name="main">
+    <h1>项目标签修改</h1>
+    <form name='MyForm' id='MyForm' method='POST' action="__ACTION__/pro_id/{$project_01.pro_id}" enctype="multipart/form-data" >
+    <div id="row-three">
+        <div id="rowname">项目所属标签：</div>
+        <foreach name="class" item="vv">
+            <div id="class_label">
+                <div>{$vv.cla_name}</div>
+                <div>
+                <foreach name="label" item="v" >
+                <if condition="$v['lab_claid']==$vv['cla_id']">
+                    <if condition="in_array($v['lab_id'],$label_01)">
+                        <input type='checkbox' checked="checked" name='label[]' id="label" value="{$v.lab_id}"/>{$v.lab_name}
+                    <else />
+                        <input type='checkbox' name='label[]' id="label" value="{$v.lab_id}"/>{$v.lab_name}
+                    </if>
+                </if>
+                </foreach>
+                </div>
+            </div>
+        </foreach>
+        
+    </div>
+    <div id="row">
+        <div id="rowname">项目所在城市：</div>
+        <input type="text" name="city" id="city" value="{$project_01.pro_city}" />
+    </div>
+    <div id="row">
+        <div id="rowname">项目投资额度：</div>
+        <select name="money" id="money">
+        <foreach name="money" item="v" >
+
+            <if condition="$project_01.pro_money == $v['mo_id']">
+                <option selected="selected" value="{$v.mo_id}">{$v.mo_limit}</option>
+            <else/>
+                <option value="{$v.mo_id}">{$v.mo_limit}</option>
+            </if>
+            
+        </foreach>
+            
+        </select>
+    </div>
+    <div id="row">
+        <div id="rowname">项目加盟方式：</div>
+        <select name="joinsty" id="joinsty">
+        <foreach name="joinsty" item="v" >
+
+            <if condition="$project_01.pro_joinsty == $v['jo_id']">
+                <option selected="selected" value="{$v.jo_id}">{$v.jo_name}</option>
+            <else/>
+                <option value="{$v.jo_id}">{$v.jo_name}</option>
+            </if>
+            
+        </foreach>
+        </select>
+    </div>
+    <div id="row-three">
+        <div id="rowname">项目适合人群：</div>
+        <foreach name="suitpeo" item="v" >
+
+            <if condition="in_array($v['su_id'],$suitpeo_01)">
+                <input type='checkbox' checked="checked" name='suitpeo[]' id="suitpeo" value="{$v.su_id}"/>{$v.su_name}
+            <else />
+                <input type='checkbox' name='suitpeo[]' id="suitpeo" value="{$v.su_id}"/>{$v.su_name}
+            </if>
+            
+        </foreach>
+        
+    </div>
+    <div id="sub">
+        <button onclick="submitEditor()"/>提交</button>
+    </div>
+
+    </form>
+
+</block>
+
+<block name="script">
+<script type="text/javascript">
+    //提交方法
+    function submitEditor()    {
+        //此处以非空为例
+        //if(ue.hasContents()){
+            //ue.sync();       //同步内容(内容里的图片)
+            document.MyForm.submit();
+        //}
+    }  
+    
+</script>
+
+</block>

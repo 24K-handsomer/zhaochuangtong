@@ -1,0 +1,134 @@
+body,h1,h2,h3,p,ul,ol,form,fieldset,figure,p,div{
+	margin: 0;
+	padding: 0;
+}
+body{
+	font-family:"微软雅黑";
+}
+ul,ol{
+	list-style-type: none;
+}
+a{
+	text-decoration: none;
+}
+a:link,a:visited,a:hover,a:active{ 
+	text-decoration: none; 
+}
+img {
+	display: block;
+	max-width: 100%;
+	margin: 0 auto;
+}
+
+#content{
+	background: url(../imges/projectcard/background.png);
+	color: #FFFFFF;
+	color: #FFFFFF;
+    padding: 80px 5% 40px 5%;
+}
+#title{
+	padding-top: 22px;
+    padding-bottom:22px;
+    text-align: center;
+	color: #e40012;
+    font: bold 24px "微软雅黑";
+}
+#instr{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#instr-left{
+	width: 35%;
+}
+#instr-right{
+	width: 65%;
+    padding-left: 5%;
+}
+
+#info>ul{
+		font-size: 13px;
+		line-height: 33px;
+}
+.glyphicon{
+	padding-right: 7px;
+}
+
+.line{
+	border: 1px solid #ffffff;
+    margin: 14px 0;
+}
+#myTab{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+#myTab>li,#myTab>li>a{
+	width: 20%;
+    border: 1px solid red;
+    /*margin-left: 2%;
+    margin-right: 2%;*/
+    border-radius: 15%;
+    text-align: center;
+    color: #ffffff;
+    background-color: red;
+}
+.tab-pane{
+	text-align: justify;
+	text-indent: 2em;
+	font-size: 18px;
+	padding-top: 18px;
+}
+.share{
+	padding: 80px 0 30px 0;
+	text-align: center;
+}
+.share>div:nth-child(1){
+	display: inline-block;
+    font-size: 24px;
+    background-color: red;
+    border-radius: 10%;
+    padding: 5px 8px;
+}
+
+.modal-content,.modal-body{
+	background-color: transparent;
+	padding: 75px 5% 0 5%;
+	font-size: 30px;
+	text-align: center;
+}
+/*nav-d*/
+.nav-d{
+	width: 100%;
+	height: 52px;
+	background: #eeeeef;
+	position: fixed;
+	bottom: 0;
+}
+.nav-d-div{
+	text-align: center;
+	padding-top: 6px;
+	width: 20%;
+	float: left;
+}
+.nav-d a{
+	font: normal 16px "微软雅黑";
+	color: #231815;
+}
+.nav-d img{
+	display: inline-block;
+	text-align: center;
+}
+
+/* @media screen and (min-width:640px) and (max-width:749px) {
+	#info>ul{
+		font-size: 13px;
+		line-height: 23px;
+	}
+	#myTab>li, #myTab>li>a {
+    width: 23%;
+    }
+} */
+/* @media screen and (min-width:750px) and (max-width:1242px) { */
+	
+/* } */

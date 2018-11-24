@@ -1,0 +1,231 @@
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>招创通</title>
+    <script src="<?php echo JS_URL ?>mui.min.js"></script>
+    <link href="<?php echo CSS_URL ?>mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="<?php echo CSS_URL ?>index.css" />
+</head>
+<body>
+	<div id="kuang">
+		
+		<div class="mui-slider">
+			<div class="mui-slider-group mui-slider-loop">
+				<div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="<?php echo IMG_URL ?>index/lunbe01.png" /></a></div>
+				
+			    <div class="mui-slider-item"><a href="#"><img src="<?php echo IMG_URL ?>index/lunbe01.png" /></a></div>
+			    <div class="mui-slider-item"><a href="#"><img src="<?php echo IMG_URL ?>index/lunbe02.png" /></a></div>
+			    <div class="mui-slider-item"><a href="#"><img src="<?php echo IMG_URL ?>index/lunbe03.png" /></a></div>
+			    <div class="mui-slider-item"><a href="#"><img src="<?php echo IMG_URL ?>index/lunbe04.png" /></a></div>
+				
+				<div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="<?php echo IMG_URL ?>index/lunbe01.png" /></a></div>
+			</div>
+		</div>
+		
+		<div id="nav">
+			<div id="nav-div">
+				<a href="/index.php/home/Project/index/label/0">
+				<div><img src="<?php echo IMG_URL ?>index/zsxm.png" /></div>
+				<div class="item">招商项目</div>
+				</a>
+			</div>
+			
+			<div id="nav-div">
+			    <a href="/index.php/home/News/index/class/0">
+				<div><img src="<?php echo IMG_URL ?>index/zszx.png" /></div>
+				<div class="item">招商咨讯</div>
+				</a>
+			</div>
+			
+			<div id="nav-div">
+				<a href="/index.php/home/News/index/class/2">
+				<div><img src="<?php echo IMG_URL ?>index/121402.png" /></div>
+				<div class="item">创业咨讯</div>
+				</a>
+			</div>
+			
+			<div id="nav-div">
+				<a href="#">
+				<div><img src="<?php echo IMG_URL ?>index/wxyx.png" /></div>
+				<div class="item">微信营销</div>
+				</a>
+			</div>
+			
+			<div id="nav-div">
+				<a href="/index.php/home/Project/index/label/1">
+				<div><img src="<?php echo IMG_URL ?>index/xcjm.png" /></div>
+				<div class="item">小吃加盟</div>
+				</a>
+			</div>
+			
+			<div id="nav-div">
+				<a href="/index.php/home/Project/index/label/47">
+				<div><img src="<?php echo IMG_URL ?>index/building.png" /></div>
+				<div class="item">建材招商</div>
+				</a>
+			</div>
+			
+			<div id="nav-div">
+				<a href="/index.php/home/Project/index/label/47">
+				<div><img src="<?php echo IMG_URL ?>index/innovate.png" /></div>
+				<div class="item">特色创新</div>
+				</a>
+			</div>
+			
+			<div id="nav-div">
+				<a href="/index.php/home/Project/indexsuitpeo/suitpeo/2">
+				<div><img src="<?php echo IMG_URL ?>index/entrepreneurship.png" /></div>
+				<div class="item">大学生创业</div>
+				</a>
+			</div>
+		</div>
+		
+		<div id="intr">
+			<div id="intr-first">
+				<div>招创通介绍</div>
+				<div><img src="<?php echo IMG_URL ?>index/port.png" /></div>
+			</div>
+			<div id="intr-second">为什么要加入招创通?</div>
+			<div id="intr-three">
+				<div>
+					<img src="<?php echo IMG_URL ?>index/function.png" />
+				</div>
+				
+				<div>
+					<img src="<?php echo IMG_URL ?>index/package.png" />
+				</div>
+				
+				<div>
+					<img src="<?php echo IMG_URL ?>index/case.png" />
+				</div>
+				
+				<div>
+					<img src="<?php echo IMG_URL ?>index/feedback.png" />
+				</div>
+			</div>
+		</div>
+		
+		<div id="gossip">
+			<div id="gossip-fir"><img src='<?php echo IMG_URL ?>index/121401.png'/></div>
+			<div id="gossip-sec">
+					<marquee direction="left" scrollamount=5 scrolldelay=200 behavior=scroll loop=-1 height='22' vspace="5" onmouseover='this.stop();' onmouseout='this.start()'>
+						
+						<?php if(is_array($news)): foreach($news as $key=>$v): ?><span id="gundong"><a style="color: #007aff;" href="#/ne_id/<?php echo ($v["ne_id"]); ?>"><?php echo ($v["ne_title"]); ?></a></span>
+						    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php endforeach; endif; ?>
+					</marquee>
+			</div>
+		</div>
+		
+		<div id="project">
+			<div id="project-fir">
+				<div>优秀招商项目</div>
+				<div><img src="<?php echo IMG_URL ?>index/port.png" /></div>
+			</div>
+			<div id="project-sec">推荐您感兴趣的各类招商项目</div>
+			<div id="project-thr">
+
+				<?php if(is_array($attr)): foreach($attr as $key=>$v): ?><a href="/index.php/home/project1/index/pro_id/<?php echo ($v["pro_id"]); ?>">
+					<div id="project-thr-fir">
+						<div><img src='<?php echo ($v["pro_miximg"]); ?>' /></div>
+						<div>
+							<div class="name2"><?php echo ($v["pro_title"]); ?></div>
+							<div class="content"><?php echo ($v["pro_shortdescription"]); ?></div>
+						</div>
+					</div>
+					</a><?php endforeach; endif; ?>
+				
+			</div>
+			<div style="padding-top: 26px;text-align: center;">
+				<a id="jiazai" href="javascript:jiazai()">点击加载更多</a>
+			</div>
+		</div>
+		
+		<div id="copyright">
+			©2013-2016招创通&nbsp;&nbsp;技术支持&nbsp;荆棘鸟网络
+		</div>
+		
+	</div>
+	<div class="mui-bar-footer">
+		<ul class="mui-table-view">
+		    <li class="mui-table-view-cell">
+		      <a href="#">
+		      	<div><img src="<?php echo IMG_URL ?>index/feilei.png" /></div>
+		      	<div>分类</div>
+		      </a>
+		    </li>
+		    
+		    <li class="mui-table-view-cell">
+		      <a href="#">
+		      	<div><img src='<?php echo IMG_URL ?>index/121403.png' /></div>
+		      	<div>电话</div>
+		      </a>
+		    </li>
+		    
+		    <li class="mui-table-view-cell">
+		      <a href="#">
+		      	<div><img src='<?php echo IMG_URL ?>index/logo.png' /></div>
+		      </a>
+		    </li>
+		    
+		    <li class="mui-table-view-cell">
+		      <a href="#">
+		      	<div><img src='<?php echo IMG_URL ?>index/QQ.png' /></div>
+		      	<div>QQ</div>
+		      </a>
+		    </li>
+		    
+		    <li class="mui-table-view-cell">
+		      <a href="#">
+		      	<div><img src='<?php echo IMG_URL ?>index/join.png' /></div>
+		      	<div>加入我们</div>
+		      </a>
+		    </li>
+	    </ul>
+	</div>
+</body>
+<script type="text/javascript">
+	var gallery = mui('.mui-slider');
+		gallery.slider({
+		  interval:2000//自动轮播周期，若为0则不自动播放，默认为0；
+		});
+</script>
+
+<script type="text/javascript" src="/Public/jquery-2.0.2.min.js"></script>
+<script type="text/javascript">
+
+function jiazai(){
+	$("#jiazai").html("加载中......");
+	var a=$('#project-thr').children('a').length;
+	$.ajax({
+		url:'/index.php/home/index/jiazai',
+        data:{code:a},
+        type:"GET",
+        dataType:"JSON",
+        success: function(data)
+        {
+        	if(data.status==1){ 
+        		var str="";
+                var attr=data.info;
+                for(var i=0;i<attr.length;i++){
+                	str+="<a href='/index.php/home/project1/index/pro_id/"+attr[i].pro_id+"'>";
+                	str+="<div id='project-thr-fir'>";
+                	str+="<div><img src='"+attr[i].pro_miximg+"' /></div>";
+                	str+="<div><div class='name2'>"+attr[i].pro_title+"</div>";
+                	str+="<div class='content'>"+attr[i].pro_shortdescription+"</div>";
+                	str+="</div></div></a>";
+                }
+                $('#project-thr').children('a:last-child').after(str);
+                $("#jiazai").html("点击加载更多");
+            }
+            else{
+            	var str="已加载完所有数据";
+            	$("#jiazai").html(str);
+            }
+        }
+	});
+}
+
+</script>
+</html>

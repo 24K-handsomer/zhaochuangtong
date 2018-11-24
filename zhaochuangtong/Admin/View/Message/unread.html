@@ -1,0 +1,112 @@
+<extend name="Demo:demo" />
+
+<block name="style">
+<link rel="stylesheet" href="<?php echo ADMIN_CSS_URL ?>showproject.css" />
+</block>
+
+<block name="navleft">
+<ul class="nav nav-tabs">
+    <foreach name="auth_infoA" item="v">
+    <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+            {$v.auth_name} <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+            <foreach name="auth_infoB" item="vv">
+            <if condition="$vv['auth_pid']==$v['auth_id']">
+            <li><a href="__MODULE__/{$vv.auth_c}/{$vv.auth_a}">{$vv.auth_name}</a></li>
+            </if>
+            </foreach>
+        </ul>
+    </li>
+    </foreach>
+</ul>
+</block>
+
+<block name="main">
+<h1>{$title}未读留言</h1>
+<div>共有留言：{$count}条</div>
+
+<table width="94%" border="1" cellpadding="0" cellspacing="0">
+	<tr id="first-tr">
+
+	    <td>留言者姓名</td>
+	    <td>手机号</td>
+	    <td>其他联系方式</td>
+	    <td>留言内容</td>
+	    <td>所在地</td>
+	    <td>留言时间</td>
+	    <td>是否已阅读</td>
+	    <td>操作</td>
+	</tr>
+	<foreach name="liuyan" item="v">
+	<tr id="second-tr" class="row{$v.liu_id}">
+	    <td>{$v.liu_name}</td>
+	    <td>{$v.liu_tel}</td>
+	    <td>{$v.liu_other}</td>
+	    <td>{$v.liu_content}</td>
+	    <td>{$v.liu_city}</td>
+	    <td>{$v.liu_crtime}</td>
+	    <td id="read{$v.liu_id}">
+	     	<if condition="$v['liu_read']==0">
+	     		<button style="color: red" class="read" value="{$v.liu_id}">阅读</button>
+	     	<else />
+	     		已阅
+	     	</if>
+	    </td>
+	    <td>
+	     	<a class="delete" bs="{$v.liu_id}">删除</a>
+	    </td>
+	</tr>
+	</foreach>
+</table>
+<div>{$show}</div>
+</block>
+
+<block name="script">
+<script type="text/javascript" src="__PUBLIC__/jquery-2.0.2.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	//阅读处理
+	$(".read").click(function(){
+		var id=$(this).val();
+		var td="#read"+id;
+		$.ajax({
+			url:"__CONTROLLER__/update",
+            data:{liu_id:id},
+            type:"POST",
+            dataType:"JSON",
+            success: function(data)
+            {
+            	if(data.status==1){ 
+	                $(td).html("<span>已阅</span>");
+	            }
+            },
+
+		});
+
+	});
+
+	//删除处理
+	$(".delete").click(function(){
+		var id=$(this).attr("bs");
+		var tr=".row"+id;
+		$.ajax({
+			url:"__CONTROLLER__/delete",
+            data:{liu_id:id},
+            type:"POST",
+            dataType:"JSON",
+            success: function(data)
+            {
+            	if(data.status==1){ 
+	                $(tr).remove();
+	            }
+            },
+
+		});
+
+	});
+
+})
+</script>
+</block>

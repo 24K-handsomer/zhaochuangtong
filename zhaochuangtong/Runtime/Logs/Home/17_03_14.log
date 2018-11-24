@@ -1,0 +1,318 @@
+[ 2017-03-14T00:20:07+08:00 ] 106.38.231.219 /proxyip/check
+ERR: 无法加载控制器:Proxyip
+
+[ 2017-03-14T01:02:23+08:00 ] 140.205.225.188 /ujhaflemznst
+ERR: 无法加载控制器:Ujhaflemznst
+
+[ 2017-03-14T01:02:23+08:00 ] 140.205.225.188 /ujhaflemznst
+ERR: 无法加载控制器:Ujhaflemznst
+
+[ 2017-03-14T01:02:23+08:00 ] 140.205.225.188 /ujhaflemznst
+ERR: 无法加载控制器:Ujhaflemznst
+
+[ 2017-03-14T01:04:03+08:00 ] 140.205.225.188 /warning
+ERR: 无法加载控制器:Warning
+
+[ 2017-03-14T01:07:53+08:00 ] 140.205.225.188 /pleasereadthis
+ERR: 无法加载控制器:Pleasereadthis
+
+[ 2017-03-14T01:11:02+08:00 ] 140.205.225.188 /please_read/_search
+ERR: 无法加载控制器:PleaseRead
+
+[ 2017-03-14T01:11:14+08:00 ] 163.172.66.15 /2015huangdibaizudadian/
+ERR: 无法加载控制器:2015huangdibaizudadian
+
+[ 2017-03-14T01:14:18+08:00 ] 140.205.225.188 /about/
+ERR: 无法加载控制器:About
+
+[ 2017-03-14T01:20:16+08:00 ] 140.205.225.188 /clusters.jsf
+ERR: 无法加载控制器:Clusters.jsf
+
+[ 2017-03-14T01:30:22+08:00 ] 140.205.225.188 /hwi/
+ERR: 无法加载控制器:Hwi
+
+[ 2017-03-14T01:31:35+08:00 ] 140.205.225.188 /jobs/
+ERR: 无法加载控制器:Jobs
+
+[ 2017-03-14T01:31:46+08:00 ] 140.205.225.188 /rs-status
+ERR: 无法加载控制器:Rs-status
+
+[ 2017-03-14T01:31:53+08:00 ] 140.205.225.188 /master-status
+ERR: 无法加载控制器:Master-status
+
+[ 2017-03-14T01:31:56+08:00 ] 140.205.225.188 /dfshealth.jsp
+ERR: 无法加载控制器:Dfshealth.jsp
+
+[ 2017-03-14T01:31:58+08:00 ] 140.205.225.188 /hadoop/dfshealth.jsp
+ERR: 无法加载控制器:Hadoop
+
+[ 2017-03-14T01:32:04+08:00 ] 140.205.225.188 /solr/
+ERR: 无法加载控制器:Solr
+
+[ 2017-03-14T01:36:21+08:00 ] 140.205.225.188 /info
+ERR: 无法加载控制器:Info
+
+[ 2017-03-14T01:41:41+08:00 ] 140.205.225.188 /dfshealth.html
+ERR: 无法加载控制器:Dfshealth
+
+[ 2017-03-14T01:56:58+08:00 ] 120.24.228.229 /pmd
+ERR: 无法加载控制器:Pmd
+
+[ 2017-03-14T02:06:41+08:00 ] 163.172.66.22 /liuyifeihuangshengyiheying/
+ERR: 无法加载控制器:Liuyifeihuangshengyiheying
+
+[ 2017-03-14T02:55:33+08:00 ] 140.205.225.188 /j_acegi_security_check
+ERR: 无法加载控制器:JAcegiSecurityCheck
+
+[ 2017-03-14T03:24:18+08:00 ] 140.205.225.188 /uhcbkflmtjqd
+ERR: 无法加载控制器:Uhcbkflmtjqd
+
+[ 2017-03-14T03:24:18+08:00 ] 140.205.225.188 /uhcbkflmtjqd
+ERR: 无法加载控制器:Uhcbkflmtjqd
+
+[ 2017-03-14T03:24:18+08:00 ] 140.205.225.188 /uhcbkflmtjqd
+ERR: 无法加载控制器:Uhcbkflmtjqd
+
+[ 2017-03-14T03:25:59+08:00 ] 140.205.225.188 /warning
+ERR: 无法加载控制器:Warning
+
+[ 2017-03-14T03:28:08+08:00 ] 163.172.66.159 /ribenhushiyubingrenqinre/
+ERR: 无法加载控制器:Ribenhushiyubingrenqinre
+
+[ 2017-03-14T03:39:19+08:00 ] 140.205.225.188 /pleasereadthis
+ERR: 无法加载控制器:Pleasereadthis
+
+[ 2017-03-14T03:39:38+08:00 ] 106.38.231.220 /proxyip/check
+ERR: 无法加载控制器:Proxyip
+
+[ 2017-03-14T03:40:12+08:00 ] 42.236.10.108 /etouzhailiankuanmianxiang/
+ERR: 无法加载控制器:Etouzhailiankuanmianxiang
+
+[ 2017-03-14T03:40:12+08:00 ] 180.153.236.51 /shenzhenjichangmijikongjuzheng/
+ERR: 无法加载控制器:Shenzhenjichangmijikongjuzheng
+
+[ 2017-03-14T03:40:12+08:00 ] 42.236.10.114 /xingtaiheishehuijinlaowai/
+ERR: 无法加载控制器:Xingtaiheishehuijinlaowai
+
+[ 2017-03-14T03:40:12+08:00 ] 42.236.10.74 /shuohaoyiqidaobaitoubiaoqing/
+ERR: 无法加载控制器:Shuohaoyiqidaobaitoubiaoqing
+
+[ 2017-03-14T03:40:13+08:00 ] 180.153.236.51 /liutaobijiniyuzhaotu/
+ERR: 无法加载控制器:Liutaobijiniyuzhaotu
+
+[ 2017-03-14T03:40:13+08:00 ] 180.153.236.101 /shenyangyeweiyangxiaoyechehuo/
+ERR: 无法加载控制器:Shenyangyeweiyangxiaoyechehuo
+
+[ 2017-03-14T03:40:13+08:00 ] 42.236.10.76 /chenhaominfeilichenjiaheng/
+ERR: 无法加载控制器:Chenhaominfeilichenjiaheng
+
+[ 2017-03-14T03:40:14+08:00 ] 180.153.236.157 /nanjingshixingzhengquhuatu/
+ERR: 无法加载控制器:Nanjingshixingzhengquhuatu
+
+[ 2017-03-14T03:49:32+08:00 ] 140.205.225.188 /please_read/_search
+ERR: 无法加载控制器:PleaseRead
+
+[ 2017-03-14T03:54:14+08:00 ] 140.205.225.188 /about/
+ERR: 无法加载控制器:About
+
+[ 2017-03-14T03:56:07+08:00 ] 140.205.225.188 /clusters.jsf
+ERR: 无法加载控制器:Clusters.jsf
+
+[ 2017-03-14T04:04:40+08:00 ] 140.205.225.188 /hwi/
+ERR: 无法加载控制器:Hwi
+
+[ 2017-03-14T04:04:53+08:00 ] 140.205.225.188 /jobs/
+ERR: 无法加载控制器:Jobs
+
+[ 2017-03-14T04:04:57+08:00 ] 140.205.225.188 /rs-status
+ERR: 无法加载控制器:Rs-status
+
+[ 2017-03-14T04:04:59+08:00 ] 140.205.225.188 /master-status
+ERR: 无法加载控制器:Master-status
+
+[ 2017-03-14T04:05:00+08:00 ] 140.205.225.188 /dfshealth.jsp
+ERR: 无法加载控制器:Dfshealth.jsp
+
+[ 2017-03-14T04:05:01+08:00 ] 140.205.225.188 /hadoop/dfshealth.jsp
+ERR: 无法加载控制器:Hadoop
+
+[ 2017-03-14T04:05:04+08:00 ] 140.205.225.188 /solr/
+ERR: 无法加载控制器:Solr
+
+[ 2017-03-14T04:05:32+08:00 ] 140.205.225.188 /info
+ERR: 无法加载控制器:Info
+
+[ 2017-03-14T04:09:46+08:00 ] 164.132.161.73 /shengao178geirendeshijue/
+ERR: 无法加载控制器:Shengao178geirendeshijue
+
+[ 2017-03-14T04:10:25+08:00 ] 140.205.225.188 /dfshealth.html
+ERR: 无法加载控制器:Dfshealth
+
+[ 2017-03-14T04:20:59+08:00 ] 51.255.65.91 /xiongqianzuohengeda/
+ERR: 无法加载控制器:Xiongqianzuohengeda
+
+[ 2017-03-14T04:29:35+08:00 ] 220.181.108.185 /index.php/home/projectcard/index/pro_id/
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `pro_usname`,`pro_title`,`pro_logo`,`pro_twobar`,`pro_shortdescription`,`pro_com_addr`,`pro_com_tel`,`pro_weixin` FROM `project_01` WHERE ( pro_id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `pro_usname`,`pro_title`,`pro_logo`,`pro_twobar`,`pro_shortdescription`,`pro_com_addr`,`pro_com_tel`,`pro_weixin` FROM `project_01` WHERE ( pro_id= ) LIMIT 1  
+
+[ 2017-03-14T04:44:39+08:00 ] 123.125.71.53 /robots.txt
+ERR: 无法加载控制器:Robots.txt
+
+[ 2017-03-14T05:49:23+08:00 ] 163.172.65.49 /laotouxiejing/
+ERR: 无法加载控制器:Laotouxiejing
+
+[ 2017-03-14T06:21:24+08:00 ] 140.205.201.43 /editors/index.html
+ERR: 无法加载控制器:Editors
+
+[ 2017-03-14T06:21:54+08:00 ] 140.205.201.43 /LICENSE.txt
+ERR: 无法加载控制器:LICENSE.txt
+
+[ 2017-03-14T06:21:55+08:00 ] 140.205.201.43 /extensions/kindeditor/themes/default/default.png)
+ERR: 无法加载控制器:Extensions
+
+[ 2017-03-14T06:46:02+08:00 ] 164.132.161.85 /xintaihaodejuzi/
+ERR: 无法加载控制器:Xintaihaodejuzi
+
+[ 2017-03-14T06:59:22+08:00 ] 106.38.230.19 /proxyip/check
+ERR: 无法加载控制器:Proxyip
+
+[ 2017-03-14T08:32:43+08:00 ] 120.24.228.229 /phpmyadmin
+ERR: 无法加载控制器:Phpmyadmin
+
+[ 2017-03-14T09:36:17+08:00 ] 66.249.64.179 /robots.txt
+ERR: 无法加载控制器:Robots.txt
+
+[ 2017-03-14T10:00:02+08:00 ] 163.172.65.232 /qvod98_com/
+ERR: 无法加载控制器:Qvod98Com
+
+[ 2017-03-14T10:18:57+08:00 ] 140.205.201.41 /editors/index.html
+ERR: 无法加载控制器:Editors
+
+[ 2017-03-14T10:19:26+08:00 ] 140.205.201.41 /LICENSE.txt
+ERR: 无法加载控制器:LICENSE.txt
+
+[ 2017-03-14T10:19:28+08:00 ] 140.205.201.41 /extensions/kindeditor/themes/default/default.png)
+ERR: 无法加载控制器:Extensions
+
+[ 2017-03-14T10:21:30+08:00 ] 106.38.231.219 /proxyip/check
+ERR: 无法加载控制器:Proxyip
+
+[ 2017-03-14T10:34:35+08:00 ] 163.172.66.110 /csgaoxiaodongtaixiaosiren/
+ERR: 无法加载控制器:Csgaoxiaodongtaixiaosiren
+
+[ 2017-03-14T12:31:25+08:00 ] 163.172.64.181 /nahuanhoujitiannengtongfang/
+ERR: 无法加载控制器:Nahuanhoujitiannengtongfang
+
+[ 2017-03-14T12:31:45+08:00 ] 5.196.87.20 /robots.txt
+ERR: 无法加载控制器:Robots.txt
+
+[ 2017-03-14T13:47:13+08:00 ] 106.38.231.219 /proxyip/check
+ERR: 无法加载控制器:Proxyip
+
+[ 2017-03-14T13:55:24+08:00 ] 46.229.164.101 /robots.txt
+ERR: 无法加载控制器:Robots.txt
+
+[ 2017-03-14T13:57:12+08:00 ] 163.172.65.197 /zhuanyongchengrenbofangqi/
+ERR: 无法加载控制器:Zhuanyongchengrenbofangqi
+
+[ 2017-03-14T14:16:07+08:00 ] 51.255.65.23 /douzihaianheshibiansuo/
+ERR: 无法加载控制器:Douzihaianheshibiansuo
+
+[ 2017-03-14T14:54:45+08:00 ] 140.205.201.42 /hnwvsoqerbjl
+ERR: 无法加载控制器:Hnwvsoqerbjl
+
+[ 2017-03-14T14:54:45+08:00 ] 140.205.201.42 /hnwvsoqerbjl
+ERR: 无法加载控制器:Hnwvsoqerbjl
+
+[ 2017-03-14T14:54:45+08:00 ] 140.205.201.42 /hnwvsoqerbjl
+ERR: 无法加载控制器:Hnwvsoqerbjl
+
+[ 2017-03-14T14:57:09+08:00 ] 140.205.201.42 /warning
+ERR: 无法加载控制器:Warning
+
+[ 2017-03-14T15:02:44+08:00 ] 140.205.201.42 /pleasereadthis
+ERR: 无法加载控制器:Pleasereadthis
+
+[ 2017-03-14T15:05:57+08:00 ] 140.205.201.42 /please_read/_search
+ERR: 无法加载控制器:PleaseRead
+
+[ 2017-03-14T15:11:15+08:00 ] 140.205.201.42 /about/
+ERR: 无法加载控制器:About
+
+[ 2017-03-14T15:18:52+08:00 ] 140.205.201.42 /clusters.jsf
+ERR: 无法加载控制器:Clusters.jsf
+
+[ 2017-03-14T15:26:05+08:00 ] 140.205.201.42 /hwi/
+ERR: 无法加载控制器:Hwi
+
+[ 2017-03-14T15:26:58+08:00 ] 140.205.201.42 /jobs/
+ERR: 无法加载控制器:Jobs
+
+[ 2017-03-14T15:27:09+08:00 ] 140.205.201.42 /rs-status
+ERR: 无法加载控制器:Rs-status
+
+[ 2017-03-14T15:27:17+08:00 ] 140.205.201.42 /master-status
+ERR: 无法加载控制器:Master-status
+
+[ 2017-03-14T15:27:20+08:00 ] 140.205.201.42 /dfshealth.jsp
+ERR: 无法加载控制器:Dfshealth.jsp
+
+[ 2017-03-14T15:27:23+08:00 ] 140.205.201.42 /hadoop/dfshealth.jsp
+ERR: 无法加载控制器:Hadoop
+
+[ 2017-03-14T15:27:31+08:00 ] 140.205.201.42 /solr/
+ERR: 无法加载控制器:Solr
+
+[ 2017-03-14T15:27:43+08:00 ] 140.205.201.42 /info
+ERR: 无法加载控制器:Info
+
+[ 2017-03-14T15:31:20+08:00 ] 140.205.201.42 /dfshealth.html
+ERR: 无法加载控制器:Dfshealth
+
+[ 2017-03-14T16:04:14+08:00 ] 164.132.161.73 /jipintu/
+ERR: 无法加载控制器:Jipintu
+
+[ 2017-03-14T16:14:19+08:00 ] 140.205.201.42 /j_acegi_security_check
+ERR: 无法加载控制器:JAcegiSecurityCheck
+
+[ 2017-03-14T16:37:54+08:00 ] 96.47.226.20 /robots.txt
+ERR: 无法加载控制器:Robots.txt
+
+[ 2017-03-14T17:11:56+08:00 ] 106.38.231.218 /proxyip/check
+ERR: 无法加载控制器:Proxyip
+
+[ 2017-03-14T17:31:07+08:00 ] 163.172.66.116 /xiaoqingxinpifunvshengcemian/
+ERR: 无法加载控制器:Xiaoqingxinpifunvshengcemian
+
+[ 2017-03-14T17:40:24+08:00 ] 164.132.161.42 /linkendazhanjiangshi_dianying/
+ERR: 无法加载控制器:LinkendazhanjiangshiDianying
+
+[ 2017-03-14T17:59:44+08:00 ] 121.40.168.196 /phpmyadmin
+ERR: 无法加载控制器:Phpmyadmin
+
+[ 2017-03-14T18:48:24+08:00 ] 51.255.65.20 /weineiruilanvzhubocluo/
+ERR: 无法加载控制器:Weineiruilanvzhubocluo
+
+[ 2017-03-14T18:56:25+08:00 ] 140.205.201.43 /editors/index.html
+ERR: 无法加载控制器:Editors
+
+[ 2017-03-14T18:56:54+08:00 ] 140.205.201.43 /LICENSE.txt
+ERR: 无法加载控制器:LICENSE.txt
+
+[ 2017-03-14T18:56:55+08:00 ] 140.205.201.43 /extensions/kindeditor/themes/default/default.png)
+ERR: 无法加载控制器:Extensions
+
+[ 2017-03-14T19:56:17+08:00 ] 163.172.66.91 /nvshengshangxuetuzhongbeilunweiguan/
+ERR: 无法加载控制器:Nvshengshangxuetuzhongbeilunweiguan
+
+[ 2017-03-14T20:35:53+08:00 ] 106.38.230.19 /proxyip/check
+ERR: 无法加载控制器:Proxyip
+
+[ 2017-03-14T20:59:02+08:00 ] 66.249.64.48 /robots.txt
+ERR: 无法加载控制器:Robots.txt
+
+[ 2017-03-14T23:07:38+08:00 ] 163.172.65.14 /zhongguoyingshiguzhuangmeinv/
+ERR: 无法加载控制器:Zhongguoyingshiguzhuangmeinv
+

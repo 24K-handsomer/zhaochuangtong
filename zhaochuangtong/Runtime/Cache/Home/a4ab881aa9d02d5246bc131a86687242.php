@@ -1,0 +1,408 @@
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<link href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="<?php echo CSS_URL ?>project.css" />
+	<title></title>
+</head>
+<body>
+	<!--第一行logo和搜索框-->
+	<div id="first">
+		<div><img src='<?php echo IMG_URL ?>project/logo.png' /></div>
+		<form class="form-inline" action="/index.php/home/project/indexlike" method="post">
+			<label>搜索</label>
+			<div>
+				<input type="text" class="form-control" name="text" />
+			</div>
+			<button type="submit" class="btn btn-default">
+				<img src='<?php echo IMG_URL ?>project/magnifier.png' />
+			</button>
+		</form>
+	</div>
+	
+	<!-- 模态框（Modal） -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+	
+			<div class="modal-body">
+
+				<?php if(is_array($class)): foreach($class as $key=>$cl): ?><button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#demo<?php echo ($cl["cla_id"]); ?>">
+				<?php echo ($cl["cla_name"]); ?>
+				</button>
+
+				<div id="demo<?php echo ($cl["cla_id"]); ?>" class="collapse">
+					<?php if(is_array($label)): foreach($label as $key=>$la): if($cl['cla_id']==$la['lab_claid']): ?><a href="/index.php/home/project/index/label/<?php echo ($la["lab_id"]); ?>"><?php echo ($la["lab_name"]); ?></a>
+					<?php else: endif; endforeach; endif; ?>
+				</div><?php endforeach; endif; ?>
+
+			</div>
+			
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal -->
+</div>
+	<!--第二行：分类搜索-->
+	<div id="second">
+
+		<div class="dropdown">
+			<button type="button" class="btn dropdown-toggle" id="dropdownMenu1" data-toggle="modal" data-target="#myModal">
+				<img src='<?php echo IMG_URL ?>project/industry.png' />
+				<div>项目行业</div>
+			</button>
+	    </div>
+	    <!--投资额度-->
+	    <div class="dropdown">
+			<button type="button" class="btn dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown">
+				<img src='<?php echo IMG_URL ?>project/investment.png' />
+				<div>投资额度</div>
+			</button>
+			<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+				<li role="presentation">
+					<a role="menuitem" tabindex="-1" href="/index.php/home/project/indexmoney/money/1">一万元以下</a>
+				</li>
+				<li role="presentation">
+					<a role="menuitem" tabindex="-1" href="/index.php/home/project/indexmoney/money/2">1万——3万</a>
+				</li>
+				<li role="presentation">
+					<a role="menuitem" tabindex="-1" href="/index.php/home/project/indexmoney/money/3">3万——5万</a>
+				</li>
+				<li role="presentation">
+					<a role="menuitem" tabindex="-1" href="/index.php/home/project/indexmoney/money/4">5万——10万</a>
+				</li>
+				<li role="presentation">
+					<a role="menuitem" tabindex="-1" href="/index.php/home/project/indexmoney/money/5">10万——20万</a>
+				</li>
+				<li role="presentation">
+					<a role="menuitem" tabindex="-1" href="/index.php/home/project/indexmoney/money/6">20万——100万</a>
+				</li>
+				<li role="presentation">
+					<a role="menuitem" tabindex="-1" href="/index.php/home/project/indexmoney/money/7">100万以上</a>
+				</li>
+			</ul>
+	    </div>
+	    <!--适应人群-->
+	    <div class="dropdown">
+			<button type="button" class="btn dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown">
+				<img src='<?php echo IMG_URL ?>project/people.png' />
+				<div>适应人群</div>
+			</button>
+			<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+				<li role="presentation">
+					<a role="menuitem" tabindex="-1" href="/index.php/home/project/indexsuitpeo/suitpeo/1">农民致富</a>
+				</li>
+				<li role="presentation">
+					<a role="menuitem" tabindex="-1" href="/index.php/home/project/indexsuitpeo/suitpeo/2">大学生创业</a>
+				</li>
+				<li role="presentation">
+					<a role="menuitem" tabindex="-1" href="/index.php/home/project/indexsuitpeo/suitpeo/3">农民工</a>
+				</li>
+				<li role="presentation">
+					<a role="menuitem" tabindex="-1" href="/index.php/home/project/indexsuitpeo/suitpeo/4">个人兼职</a>
+				</li>
+				<li role="presentation">
+					<a role="menuitem" tabindex="-1" href="/index.php/home/project/indexsuitpeo/suitpeo/5">女性创业</a>
+				</li>
+				<li role="presentation">
+					<a role="menuitem" tabindex="-1" href="/index.php/home/project/indexsuitpeo/suitpeo/6">个人自主</a>
+				</li>
+				<li role="presentation">
+					<a role="menuitem" tabindex="-1" href="/index.php/home/project/indexsuitpeo/suitpeo/7">企业增项</a>
+				</li>
+			</ul>
+	    </div>
+	    <!--参与模式-->
+	    <div class="dropdown">
+			<button type="button" class="btn dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown">
+				<img src='<?php echo IMG_URL ?>project/pattern.png' />
+				<div>参与模式</div>
+			</button>
+			<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+				<li role="presentation">
+					<a role="menuitem" tabindex="-1" href="/index.php/home/project/indexjoinsty/joinsty/1">代理商</a>
+				</li>
+				<li role="presentation">
+					<a role="menuitem" tabindex="-1" href="/index.php/home/project/indexjoinsty/joinsty/2">加盟店</a>
+				</li>
+				<li role="presentation">
+					<a role="menuitem" tabindex="-1" href="/index.php/home/project/indexjoinsty/joinsty/3">经销商</a>
+				</li>
+				<li role="presentation">
+					<a role="menuitem" tabindex="-1" href="/index.php/home/project/indexjoinsty/joinsty/4">专卖店</a>
+				</li>
+				<li role="presentation">
+					<a role="menuitem" tabindex="-1" href="/index.php/home/project/indexjoinsty/joinsty/5">其他</a>
+				</li>
+			</ul>
+	    </div>
+	</div>
+	
+	<!--第三行-->
+	<div>
+		<ul id="myTab" class="nav nav-tabs">
+		    <li class="active">
+			    <a href="#home" data-toggle="tab">
+			    	<span>综合排序</span>
+			    	<span class="glyphicon glyphicon-sort-by-attributes-alt"></span>
+			    </a>
+		    </li>
+		    <li>
+			    <a href="#ios" data-toggle="tab">
+			    	<span>最新项目</span>
+			    	<span class="glyphicon glyphicon-time"></span>
+			    </a>
+		    </li>
+		    <li>
+			    <a href="#java"  data-toggle="tab">
+			    	<span>最热项目</span>
+			    	<span class="glyphicon glyphicon-fire"></span>
+			    </a>
+		    </li>
+        </ul>
+        <div id="myTabContent" class="tab-content">
+			<div class="tab-pane fade in active" id="home">
+				<div id="project-thr">
+
+			   <!-- <div id="project-thr-fir">
+						<div><img src="<?php echo IMG_URL ?>index/lamechun.png" /></div>
+						<div>
+							<div class="name1">辣么唇冒菜</div>
+							<div class="content">辣么唇冒菜采用多种中草药熬制而成，辅以自有调料及常用调料，天然绿色，汤香扑鼻。是真正绿色、健康的冒菜，健脾康胃，不上火，不败胃，老少皆宜。</div>
+							<div><span>曾小贤</span>&nbsp;&nbsp;<span>2016-12-15 13:50</span></div>
+						</div>
+					</div> -->
+					<?php if(is_array($zonghe)): foreach($zonghe as $key=>$v): ?><a href="/index.php/home/project1/index/pro_id/<?php echo ($v["pro_id"]); ?>">
+					<div id="project-thr-fir">
+						<div><img src="<?php echo ($v["pro_miximg"]); ?>" /></div>
+						<div>
+							<div class="name1"><?php echo ($v["pro_title"]); ?></div>
+							<div class="content"><?php echo ($v["pro_shortdescription"]); ?></div>
+							<div><span><?php echo ($v["pro_views"]); ?></span>&nbsp;&nbsp;<span><?php echo ($v["pro_crtime"]); ?></span></div>
+						</div>
+					</div>
+					</a><?php endforeach; endif; ?>
+					
+				</div>
+				<input type="hidden" id="hidden1" value="<?php echo ($hidden1); ?>" />
+				<input type="hidden" id="hidden2" value="<?php echo ($hidden2); ?>" />
+				<div style="padding-top: 26px;text-align: center;">
+					<a id="jiazai" href="javascript:zonghe()">点击加载更多</a>
+				</div>
+			</div>
+			<div class="tab-pane fade" id="ios">
+				<div id="project-thr">
+
+			   <!-- <div id="project-thr-fir">
+						<div><img src="<?php echo IMG_URL ?>index/lamechun.png" /></div>
+						<div>
+							<div class="name1">辣么唇冒菜</div>
+							<div class="content">辣么唇冒菜采用多种中草药熬制而成，辅以自有调料及常用调料，天然绿色，汤香扑鼻。是真正绿色、健康的冒菜，健脾康胃，不上火，不败胃，老少皆宜。</div>
+							<div><span>曾小贤</span>&nbsp;&nbsp;<span>2016-12-15 13:50</span></div>
+						</div>
+					</div> -->
+					<?php if(is_array($new)): foreach($new as $key=>$v): ?><a href="/index.php/home/project1/index/pro_id/<?php echo ($v["pro_id"]); ?>">
+					<div id="project-thr-fir">
+						<div><img src="<?php echo ($v["pro_miximg"]); ?>" /></div>
+						<div>
+							<div class="name1"><?php echo ($v["pro_title"]); ?></div>
+							<div class="content"><?php echo ($v["pro_shortdescription"]); ?></div>
+							<div><span><?php echo ($v["pro_views"]); ?></span>&nbsp;&nbsp;<span><?php echo ($v["pro_crtime"]); ?></span></div>
+						</div>
+					</div>
+					</a><?php endforeach; endif; ?>
+					
+				</div>
+				<input type="hidden" id="hidden1" value="<?php echo ($hidden1); ?>" />
+				<input type="hidden" id="hidden2" value="<?php echo ($hidden2); ?>" />
+				<div style="padding-top: 26px;text-align: center;">
+					<a id="jiazai" href="javascript:newest()">点击加载更多</a>
+				</div>
+			</div>
+			<div class="tab-pane fade" id="java">
+				<div id="project-thr">
+
+			   <!-- <div id="project-thr-fir">
+						<div><img src='<?php echo IMG_URL ?>index/lidun.png' /></div>
+						<div>
+							<div class="name2">利顿无钥匙智能安全门</div>
+							<div class="content">辣么唇冒菜采用多种中草药熬制而成，辅以自有调料及常用调料，天然绿色，汤香扑鼻。是真正绿色、健康的冒菜，健脾康胃，不上火，不败胃，老少皆宜。</div>
+							<div><span>曾小贤</span>&nbsp;&nbsp;<span>2016-12-15 13:50</span></div>
+						</div>
+					</div> -->
+					<?php if(is_array($hot)): foreach($hot as $key=>$v): ?><a href="/index.php/home/project1/index/pro_id/<?php echo ($v["pro_id"]); ?>">
+					<div id="project-thr-fir">
+						<div><img src="<?php echo ($v["pro_miximg"]); ?>" /></div>
+						<div>
+							<div class="name1"><?php echo ($v["pro_title"]); ?></div>
+							<div class="content"><?php echo ($v["pro_shortdescription"]); ?></div>
+							<div><span><?php echo ($v["pro_views"]); ?></span>&nbsp;&nbsp;<span><?php echo ($v["pro_crtime"]); ?></span></div>
+						</div>
+					</div>
+					</a><?php endforeach; endif; ?>
+					
+				</div>
+				<input type="hidden" id="hidden1" value="<?php echo ($hidden1); ?>" />
+				<input type="hidden" id="hidden2" value="<?php echo ($hidden2); ?>" />
+				<div style="padding-top: 26px;text-align: center;">
+					<a id="jiazai" href="javascript:hot()">点击加载更多</a>
+				</div>
+			</div>
+	    </div>
+	</div>
+	
+	<div id="copyright">
+		©2013-2016招创通&nbsp;&nbsp;技术支持&nbsp;荆棘鸟网络
+	</div>
+	
+	<div class="mui-bar-footer">
+		<ul class="mui-table-view">
+		    <li class="mui-table-view-cell">
+		      <a href="#">
+		      	<div><img src="<?php echo IMG_URL ?>index/feilei.png" /></div>
+		      	<div>分类</div>
+		      </a>
+		    </li>
+		    
+		    <li class="mui-table-view-cell">
+		      <a href="#">
+		      	<div><img src='<?php echo IMG_URL ?>index/121403.png' /></div>
+		      	<div>电话</div>
+		      </a>
+		    </li>
+		    
+		    <li class="mui-table-view-cell">
+		      <a href="#">
+		      	<div><img src='<?php echo IMG_URL ?>index/logo.png' /></div>
+		      </a>
+		    </li>
+		    
+		    <li class="mui-table-view-cell">
+		      <a href="#">
+		      	<div><img src='<?php echo IMG_URL ?>index/QQ.png' /></div>
+		      	<div>QQ</div>
+		      </a>
+		    </li>
+		    
+		    <li class="mui-table-view-cell">
+		      <a href="#">
+		      	<div><img src='<?php echo IMG_URL ?>index/join.png' /></div>
+		      	<div>加入我们</div>
+		      </a>
+		    </li>
+	    </ul>
+	</div>
+	
+</body>
+<script src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
+<script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script>
+//综合
+function zonghe(){
+	$("#home #jiazai").html("加载中......");
+	var a=$('#home>#project-thr').children('a').length;
+	var hidden1=$('#home>#hidden1').val();
+	var hidden2=$('#home>#hidden2').val();
+	var biaozi="zonghe";
+	$.ajax({
+		url:'/index.php/home/project/jiazai',
+        data:{code:a,hidden1:hidden1,hidden2:hidden2,biaozi:biaozi},
+        type:"GET",
+        dataType:"JSON",
+        success: function(data)
+        {
+        	if(data.status==1){ 
+        		var str="";
+                var attr=data.info;
+                for(var i=0;i<attr.length;i++){
+                	str+="<a href='/index.php/home/project1/index/pro_id/"+attr[i].pro_id+"'>";
+                	str+="<div id='project-thr-fir'>";
+                	str+="<div><img src='"+attr[i].pro_miximg+"' /></div>";
+                	str+="<div><div class='name2'>"+attr[i].pro_title+"</div>";
+                	str+="<div class='content'>"+attr[i].pro_shortdescription+"</div>";
+                	str+="</div></div></a>";
+                }
+                $('#home>#project-thr').children('a:last-child').after(str);
+                $("#home #jiazai").html("点击加载更多");
+            }
+            else{
+            	var str="已加载完所有数据";
+            	$("#home #jiazai").html(str);
+            }
+        }
+	});
+}
+
+//最新
+function newest(){
+	$("#ios #jiazai").html("加载中......");
+	var a=$('#ios>#project-thr').children('a').length;
+	var hidden1=$('#ios>#hidden1').val();
+	var hidden2=$('#ios>#hidden2').val();
+	var biaozi="new";
+	$.ajax({
+		url:'/index.php/home/project/jiazai',
+        data:{code:a,hidden1:hidden1,hidden2:hidden2,biaozi:biaozi},
+        type:"GET",
+        dataType:"JSON",
+        success: function(data)
+        {
+        	if(data.status==1){ 
+        		var str="";
+                var attr=data.info;
+                for(var i=0;i<attr.length;i++){
+                	str+="<a href='/index.php/home/project1/index/pro_id/"+attr[i].pro_id+"'>";
+                	str+="<div id='project-thr-fir'>";
+                	str+="<div><img src='"+attr[i].pro_miximg+"' /></div>";
+                	str+="<div><div class='name2'>"+attr[i].pro_title+"</div>";
+                	str+="<div class='content'>"+attr[i].pro_shortdescription+"</div>";
+                	str+="</div></div></a>";
+                }
+                $('#ios>#project-thr').children('a:last-child').after(str);
+                $("#ios #jiazai").html("点击加载更多");
+            }
+            else{
+            	var str="已加载完所有数据";
+            	$("#ios #jiazai").html(str);
+            }
+        }
+	});
+}
+
+//最热
+function hot(){
+	$("#java #jiazai").html("加载中......");
+	var a=$('#java>#project-thr').children('a').length;
+	var hidden1=$('#java>#hidden1').val();
+	var hidden2=$('#java>#hidden2').val();
+	var biaozi="hot";
+	$.ajax({
+		url:'/index.php/home/project/jiazai',
+        data:{code:a,hidden1:hidden1,hidden2:hidden2,biaozi:biaozi},
+        type:"GET",
+        dataType:"JSON",
+        success: function(data)
+        {
+        	if(data.status==1){ 
+        		var str="";
+                var attr=data.info;
+                for(var i=0;i<attr.length;i++){
+                	str+="<a href='/index.php/home/project1/index/pro_id/"+attr[i].pro_id+"'>";
+                	str+="<div id='project-thr-fir'>";
+                	str+="<div><img src='"+attr[i].pro_miximg+"' /></div>";
+                	str+="<div><div class='name2'>"+attr[i].pro_title+"</div>";
+                	str+="<div class='content'>"+attr[i].pro_shortdescription+"</div>";
+                	str+="</div></div></a>";
+                }
+                $('#java>#project-thr').children('a:last-child').after(str);
+                $("#java #jiazai").html("点击加载更多");
+            }
+            else{
+            	var str="已加载完所有数据";
+            	$("#java #jiazai").html(str);
+            }
+        }
+	});
+}
+</script>
+</html>

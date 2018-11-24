@@ -1,0 +1,1 @@
+a:5:{i:0;s:6:"lab_id";i:1;s:8:"lab_name";i:2;s:9:"lab_claid";s:3:"_pk";s:6:"lab_id";s:5:"_type";a:3:{s:6:"lab_id";s:7:"int(11)";s:8:"lab_name";s:12:"varchar(255)";s:9:"lab_claid";s:7:"int(11)";}}
